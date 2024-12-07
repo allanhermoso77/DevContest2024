@@ -1,0 +1,28 @@
+STEPS DEV CONTEST 2024
+
+0 - platform mode c# and english
+	open visual studio
+	open chrome Google, https://www.geeksforgeeks.org/
+
+1 - open git hub to get models to read lines and break
+
+2 - translate using Revelo Translate
+
+3 - Download input output file
+	Analyze
+	Understand and IDENTIFY PATTERN
+	
+4 - Start development in Visual Studio 
+	*deixar aberto projeto modelo - Visual Studio - Rebock - Progam.cs
+
+5 - put values input hardcode
+
+6 - desenhar logica folha sulfite
+
+7 - codar lógica
+
+8 - debug / breakpoint
+
+9 - Copy paste to Isograd Platform
+
+10 - Run, fix and validate
