@@ -3,6 +3,7 @@ STEPS DEV CONTEST 2024
 0 - platform mode c# and english
 	open visual studio
 	open chrome Google, https://www.geeksforgeeks.org/
+	open Excel and Notepad
 
 1 - open git hub to get models to read lines and break
 
@@ -15,7 +16,7 @@ STEPS DEV CONTEST 2024
 4 - Start development in Visual Studio 
 	*deixar aberto projeto modelo - Visual Studio - Rebock - Progam.cs
 
-5 - put values input hardcode
+5 - put values input hardcode - Copy Paste -> Excel -> Aspas Duplas e Virgula -> Notepad -> Replace space -> Visual Studio
 
 6 - desenhar logica folha sulfite
 
