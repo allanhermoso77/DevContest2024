@@ -2,6 +2,7 @@ STEPS DEV CONTEST 2024
 
 0 - platform mode c# and english
 	open visual studio
+	ope notepad++
 	open chrome Google, https://www.geeksforgeeks.org/
 	open Excel and Notepad
 
