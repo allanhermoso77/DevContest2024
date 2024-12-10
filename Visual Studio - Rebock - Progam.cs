@@ -81,83 +81,100 @@ namespace CSharpContestProject
                          str.Length - 1, 0);
         }
 
+        static char replaceCharacter(char str)
+        {
+            return str == '.' ? '#' : str;
+        }
+
+        public static string Reverse(string s)
+        {
+            char[] charArray = s.ToCharArray();
+            Array.Reverse(charArray);
+            return new string(charArray);
+        }
+
         static void Main(string[] args)
         {
-            string[] arr = {   "30 30",
-"....#....#......#........#....",
-".....#...#......#........#....",
-".....#....#......#........#...",
-".....#....#......#........#...",
-"......#....#.....#........#...",
-"......#....#......#.......#...",
-"......#....#......#........#..",
-"......#.....#.....#........#..",
-".......#....#......#.......#..",
-".......#.A..#......#.......#..",
-".......#.....#.....#.......#..",
-".......#.....#.....#.......#..",
-".......#.....#......#......#..",
-".......#.....#......#......#..",
-".......#......#.....#......#..",
-".......#......#.....#......#..",
-".......#......#.....#......#..",
-".......#......#.....#......#..",
-".......#......#.....#......#..",
-".......#......#.....#.....#...",
-".......#......#.....#.....#...",
-"......#.......#.....#.....#...",
-"......#.......#.....#.....#...",
-"......#.......#.....#..B.#....",
-"......#.......#.....#....#....",
-".....#........#....#.....#....",
-".....#........#....#....#.....",
-".....#.......#.....#....#.....",
-"....#........#.....#....#.....",
-"....#........#....#....#......"};
+            string[] arr = {"10",
+"X.X.X...X.",
+"....X.....",
+"X.X.X.....",
+"......XX..",
+"...X......",
+"X.........",
+"..X......X",
+"X.X.XX.X..",
+"XXXX......",
+".....X....",};
 
             int countLines = 0;
-            int blocoA = 0;
-            int blocoB = 0;
+            int countBobsled = 0;
+            string bobsled = "....";
+            foreach (string line in arr)
+            {
+                if (countLines > 0)
+                {
+                    var splitBobsled = line.Split(bobsled);
+                    countBobsled = countBobsled + (splitBobsled.Count() - 1);
+                }
+
+                countLines++;
+            }
+
+            Console.WriteLine(countBobsled);
+
+            /*int countLines = 0;
+            string newLine = string.Empty;
             foreach (string lineString in arr)
             {
                 if (countLines > 0)
                 {
-                    int countBlocos = 0;
-                    char lastChar = '0';
-                    foreach (char c in lineString)
+                    int half = lineString.Length / 2;
+                    
+                    int countHalf = 0;
+                    foreach (char c in lineString.Substring(0, half))
                     {
-                        if (c == '#' && lastChar != c) {
-                            countBlocos++;
+                        char newChar = c;
+                        if (c != lineString[(lineString.Length - countHalf) - 1])
+                        {
+                            newChar = replaceCharacter(c);
                         }
-                        
-                        if (c == 'A') 
-                            blocoA = countBlocos;
-                        if (c == 'B') 
-                            blocoB = countBlocos;
 
-                        lastChar = c;
+                        newLine = newLine + newChar;
+                        countHalf++;
                     }
+                }                
+                
+                if(newLine != string.Empty)
+                {
+                    if ((lineString.Length % 2) == 0)
+                    {
+                        newLine = newLine + Reverse(newLine);
+                    }
+                    else
+                    {
+                        newLine = newLine + lineString[newLine.Length] + Reverse(newLine);
+                    }
+                    Console.WriteLine(newLine);
                 }
+                    
+                newLine = string.Empty;
                 countLines++;
-            }
+            }*/
 
-            int resultado = blocoB - blocoA;
-            string strOutput = (resultado < 0 ? resultado * -1 : resultado).ToString();
-            Console.WriteLine(strOutput);
+            /*string[] arr = {   "5 6",
+                                "###.#",
+                                "###..",
+                                "..##.",
+                                "..#..",
+                                "..#..",
+                                "###..", };
 
-                /*string[] arr = {   "5 6",
-                                    "###.#",
-                                    "###..",
-                                    "..##.",
-                                    "..#..",
-                                    "..#..",
-                                    "###..", };
+            String str = "aaaabbaa";
+            String strOutput = longest_palindromic_substr(arr[1]).ToString();
 
-                String str = "aaaabbaa";
-                String strOutput = longest_palindromic_substr(arr[1]).ToString();
-
-                // Function Call
-                Console.WriteLine(strOutput);*/
+            // Function Call
+            Console.WriteLine(strOutput);*/
 
 
             /*double sumScores = 0;
@@ -171,7 +188,7 @@ namespace CSharpContestProject
             double worstScore = Lines.Select(x => x.Score).Min();
             double bestScore = Lines.Select(x => x.Score).Max();*/
 
-            }
+        }
     }
 
 
