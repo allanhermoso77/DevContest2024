@@ -25,6 +25,20 @@ namespace CSharpContestProject
     {
         public static List<Line> Lines = new List<Line>();
 
+        public static void Mutate (char[] Nums, int Idx = 0)
+        {
+            if (Idx == Nums.Length)
+            {
+                Console.WriteLine(string.Join(' ', Nums));
+                return;
+            }
+            for (var i = Idx; i < Nums.Length; i++)
+            {
+                (Nums[Idx], Nums[i]) = (Nums[i], Nums[Idx]);
+                Mutate(Nums, Idx + 1);
+                (Nums[Idx], Nums[i]) = (Nums[i], Nums[Idx]);
+            }
+        }
         // Function to find maximum
         // of the two variables
         static int max(int x, int y)
