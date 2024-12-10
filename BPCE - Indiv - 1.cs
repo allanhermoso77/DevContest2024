@@ -1,5 +1,3 @@
-bpce indiv 2
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,24 +9,33 @@ namespace CSharpContestProject
     {
         static void Main(string[] args)
         {   
-            
-            string line;
             int countLines = 0;
-            int countBobsled = 0;
-            string bobsled = "....";
-            while ((line = Console.ReadLine()) != null) {
+            float lastArrive = 0;
+            string lineString;
+            string lastCountry = "";
+            while ((lineString = Console.ReadLine()) != null) {
                 
                 if (countLines > 0)
                 {
-                    var splitBobsled = line.Split(bobsled);
-                    countBobsled = countBobsled + (splitBobsled.Count() - 1);
+                    var splitLine = lineString.Split(" ");
+                    string country = splitLine[0];
+                    float distance = Convert.ToInt32(splitLine[1]);
+                    float speed = Convert.ToInt32(splitLine[2]);
+                
+                    float arrive = distance / speed;
+                
+                    if (arrive > lastArrive)
+                    {
+                        lastArrive = arrive;
+                        lastCountry = country;
+                    }
+                        
                 }
                 
                 countLines++;
-                
             }
 
-            Console.WriteLine(countBobsled); 
+            Console.WriteLine(lastCountry);
         }
     }
 }
